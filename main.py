@@ -1,2 +1,5 @@
+import socket
+import struct
+
 def int32_to_ip(int32):
-    return '{}.{}.{}.{}'.format(*int32.to_bytes(4, 'big'))
+    return socket.inet_ntoa(struct.pack("!I", int32))
